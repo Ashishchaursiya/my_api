@@ -14,11 +14,14 @@ from knox.views import LoginView as KnoxLoginView
 @api_view(['GET'])
 def Overview(request):
     api_urls={
-        "List":"/task-list/",
-        "Details View":"/task-details/<str:pk>/",
-        "Create":"/task-create/",
-        "Update":"/task-update/<str:pk>/",
-        "Delete":"/task-delete/<str:pk>/"
+        "Register":"api/register",
+        "Login":"api/login",
+        "Logout":"api/logout",
+        "List":"api/task-list",
+        "Details View":"api/task-details/<str:id>",
+        "Create":"api/task-create",
+        "Update":"api/task-update/<str:id>",
+        "Delete":"api/task-delete/<str:id>"
     }
     return Response(api_urls)
 
